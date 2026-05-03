@@ -1,0 +1,10 @@
+{
+  "name": "shared-workspace",
+  "version": "1.0.0",
+  "description": "Shared workspace for all Frontend Mentor projects",
+  
+  "dependencies": {
+    "tailwindcss": "^3.4.19"
+   
+  }
+}
