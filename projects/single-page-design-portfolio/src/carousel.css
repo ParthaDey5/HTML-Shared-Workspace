@@ -1,0 +1,58 @@
+/* Carousel Container */
+.carousel {
+  @apply flex flex-col gap-4 mb-24;
+}
+
+/* Slider Container */
+.carousel .slider-container {
+  @apply overflow-x-auto mx-auto;
+  width: 100%;
+  max-width: 1200px;
+  scrollbar-width: thin;
+  scrollbar-color: #374151 #f3f4f6;
+}
+
+/* Slider Track */
+.carousel .slider-container .slider {
+  @apply flex items-center justify-start gap-8 h-72 relative;
+  scroll-snap-type: x mandatory;  /* Regular CSS */
+  scroll-behavior: smooth;        /* Regular CSS */
+  width: max-content;             /* Force horizontal layout */
+}
+
+/* Slide Items */
+.carousel .slider-container .slider .slides {
+  @apply flex-shrink-0 max-w-full ;
+  scroll-snap-align: start;
+   width: 300px; /* Fixed width for horizontal layout */
+}
+
+/* Slide Images */
+.carousel .slider-container .slider .slides .slides-img {
+  @apply rounded-lg;
+}
+
+/* Navigation Buttons */
+.slider-btn-container {
+  @apply flex justify-center gap-4;
+}
+
+.slider-btn-container .slider-btn {
+  @apply bg-black border-none cursor-pointer rounded-full p-6 transition-all duration-700;
+}
+
+.slider-btn-container .slider-btn:hover,
+.slider-btn-container .slider-btn:active {
+  @apply bg-[#755cde];
+}
+
+.slider-btn-container .slider-btn:focus-visible {
+  @apply outline-2 outline-[#755cde];
+}
+
+/* Responsive */
+@media (min-width: 26.25rem) {
+  .carousel .slider-container .slider {
+    @apply h-96;
+  }
+}

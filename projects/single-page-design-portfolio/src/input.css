@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    outline: 1px red solid;
+}
+:root {
+  --dark-Blue : #030303;
+  --dark-grey : #755cde;
+  --light-orange : #f5a560;
+  --orange : #f39d9e;
+  --deep-orange : #ea7564;
+  --green : #62c4b7;
+  --custom-black : #55204a;
+  --btn-bio-red: #ea7564;
+}
+
+html{
+    font-size: 1.25vw;
+}
+
+body{
+    @apply relative col-x-center lg:px-[9.2rem] md:px-[4.3rem] px-[3.5rem];
+}
+.img-desktop{
+    @apply absolute -z-[999] opacity-20 w-full lg:block hidden
+}
+.img-tablet{
+    @apply absolute -z-[999] opacity-20 w-full lg:hidden md:block hidden
+}
+.img-mobile{
+    @apply absolute -z-[999] opacity-20 w-full md:hidden block
+}
+
+header{
+    @apply w-full lg:my-[2rem] md:my-[3.5rem] my-[3.3rem]
+}
+nav {
+    @apply w-full row-x-between row-y-center
+}
+.logo{
+    @apply lg:w-[3.4rem] md:w-[6.5rem] w-[10.2rem]
+}
+.nav-btn{
+    @apply text-white lg:text-[0.97rem] md:text-[1.875rem] text-[3.375rem] lg:w-[12.4rem] lg:h-[3rem] md:w-[23.5rem] md:h-[5.7rem] w-[37.5rem] h-[9.5rem] lg:rounded-[5rem] rounded-[10rem] center;
+
+    /* background-color: var(--dark-Blue); */
+}
+
+main {
+    @apply col-x-center lg:mt-[1.2rem] md:mt-[3.5rem] mt-[3rem]
+}
+.intro{
+    @apply col-x-center
+}
+
+.intro h1 {
+     @apply lg:text-[3.225rem] md:text-[4.65rem] text-[7.87rem] font-bold -tracking-[0.01rem] leading-tight text-center
+}
+.intro p {
+     @apply lg:text-[1.06rem] md:text-[1.97rem] text-[3.5rem] lg:px-[11rem] md:px-[4rem] px-[7rem] text-center lg:mt-[1rem] md:mt-[2.5rem] mt-[4rem] font-medium
+}
+.grid-wrapper{
+     @apply w-full lg:mt-[5rem] md:mt-[7rem] mt-[8rem] 
+}
+
+/* Grid Area Assignments */
+.graphic { grid-area: graphic; background-color: var(--dark-grey)}
+.ui-ux { grid-area: ui; background-color: var(--light-orange);}
+.apps { grid-area: apps; background-color: var(--orange)}
+.illust { grid-area: illust; background-color: var(--deep-orange)}
+.photo { grid-area: photo; background-color: var(--green)}
+.motion { grid-area: motion; background-color: var(--custom-black)}
+
+ .grid-container{
+     @apply w-full grid 
+     lg:grid-cols-6 lg:grid-rows-[10.1rem_8.8rem] lg:gap-[1.4rem]
+     md:grid-cols-4 md:grid-rows-[18.5rem_16.8rem_19rem] md:gap-[2.4rem]
+     grid-cols-2 grid-rows-[77.5rem_39rem_34rem_39rem_40rem] gap-[4.8rem];
+ 
+     @media (min-width: 1024px) {
+      
+          grid-template-areas: "graphic graphic ui apps photo photo" "graphic graphic illust illust motion motion";  
+     }   
+     @media (min-width: 768px) and (max-width: 1023px) {
+          grid-template-areas: "graphic graphic ui apps" "graphic graphic illust illust" "photo photo motion motion";  
+     }   
+     
+     @media (max-width: 767px) {
+       grid-template-areas: "graphic graphic" "ui apps" "illust illust" "photo photo" "motion motion";  
+      }
+    } 
+    
+
+
+.item  {
+    @apply col-x-end col-y-between lg:p-[1.2rem] md:p-[2.2rem] p-[5rem] lg:rounded-[0.5rem] md:rounded-[1rem]
+    rounded-[2rem]
+  }
+.item p {
+    @apply text-white w-full lg:text-[1.48rem] md:text-[2.7rem] text-[5.625rem] font-medium
+}
+
+.graphic .pattern, .illust .pattern, .motion .pattern{
+    @apply lg:w-[7.2rem] md:w-[14rem] w-[28rem]; 
+}
+ .photo .pattern {
+    @apply lg:w-[9.1rem] md:w-[17rem] w-[35rem]; 
+}
+  
+.ui-ux .pattern, .apps .pattern {
+@apply lg:w-[3.8rem] md:w-[6.5rem] w-[14rem]; 
+}
+
+.author-container{
+   @apply w-full 
+}
+.author{
+   @apply w-full md:row-y-center col-x-center md:my-[10rem] my-[21rem]
+}
+
+.author-img-container {
+    @apply md:w-1/2 w-full center ;
+}
+.author-img{
+    @apply w-[64rem] md:w-full lg:w-[25rem]  lg:scale-100 md:scale-105 lg:-translate-x-[3rem] lg:-translate-y-[2.2rem] md:-translate-x-[8rem] md:translate-y-[1rem];
+}
+
+.bio{
+    @apply md:col-x-start col-x-center col-y-start md:w-1/2 lg:-translate-y-[3.3rem]
+}
+.sec-heading{
+    @apply lg:mt-[1.4rem] md:mt-[2rem] mt-[7rem] lg:text-[2.375rem] md:text-[3.5rem] text-[5.875rem] md:text-left text-center font-medium md:pl-[0.7rem] md:pr-[0.7rem] px-[1rem] md:leading-[123%] leading-[133%]
+}
+.bio p {
+    @apply  md:mt-[2rem] mt-[5rem] lg:text-[1.05rem] md:text-[2.05rem] text-[3.375rem] md:text-left text-center font-medium lg:tracking-normal md:tracking-tight tracking-wide md:leading-[150%] leading-[160%] md:pl-[0.6rem]
+}
+.btn-bio{
+    @apply text-white lg:mt-[1.8rem] md:mt-[2.2rem] mt-[5rem] lg:w-[12.5rem] lg:h-[2.8rem] md:w-[24rem] md:h-[6rem] w-[37rem] h-[10rem] lg:text-[1rem] md:text-[1.375rem] text-[3.375rem] rounded-[8rem] center lg:ml-[1rem] md:ml-[0.5rem];
+
+    background-color: var(--btn-bio-red)
+}
+
+.carousel {
+    @apply absolute w-full overflow-hidden lg:mt-[60rem] bg-green-500
+}
+ .slider-container ul {
+    @apply row-y-center 
+}  
+
+.slider {
+    @apply bg-red-200
+}
+
+.slider-btn-container{
+    @apply center bg-red-500
+}

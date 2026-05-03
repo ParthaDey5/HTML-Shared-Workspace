@@ -1,0 +1,540 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equalizer Landing Page</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+
+    html {
+
+      font-size: 1.25vw;
+    }
+
+    html,
+    body {
+      overflow-x: clip;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    button{
+      cursor: pointer;
+    }
+
+    @media (min-width:1024px) {
+
+      body{
+        background-image: url('assets/bg-main-desktop.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .tune-22 { height: 32.729rem;width: 61.249rem;   transform: translate(0.000rem, 6.750rem); }
+
+      .tune-100 {
+        height: 8.570rem;
+        padding-left: 8.810rem;
+        margin-bottom: 3.650rem;
+      }
+
+      .tune-101 {
+        width: 7.900rem;
+      }
+
+      .tune-102 {
+        width: 17.000rem;
+        margin-top: 12.590rem;
+      }
+
+      .tune-103 {
+        padding-left: 8.900rem;
+      }
+
+      .tune-104 {
+        margin-bottom: 4.250rem;
+        width: 45.616rem;
+      }
+
+      .tune-105 {
+        font-size: 4.610rem;
+        width: 45.774rem;
+        line-height: 4.760rem;
+        letter-spacing: 0.020rem;
+        margin-bottom: 2.550rem;
+      }
+
+      .tune-106 {
+        width: 38.756rem;
+        line-height: 1.630rem;
+        letter-spacing: 0.036rem;
+      }
+
+      .tune-107 {
+        margin-top: 3.570rem;
+      }
+
+      .tune-108 {
+        width: 16.940rem;
+        margin-left: 5.460rem;
+        margin-top: -11rem;
+        height: 35.141rem;
+      }
+
+      .tune-109 {
+        width: 27.828rem;
+        margin-left: 7.5rem;
+        margin-top: 11.670rem;
+        height: 34.437rem;
+        padding-left: 2.890rem;
+        padding-right: 2.890rem;
+        padding-top: 2.480rem;
+        padding-bottom: 2.480rem;
+      }
+
+      .tune-110 {
+        font-size: 2.160rem;
+        letter-spacing: 0.030rem;
+        margin-bottom: 0.970rem;
+      }
+
+      .tune-111 {
+        line-height: 1.607rem;
+        font-size: 1.104rem;
+        letter-spacing: 0.009rem;
+        margin-bottom: 1.429rem;
+      }
+
+      .tune-112 {
+        font-size: 3.630rem;
+        margin-bottom: 1.930rem;
+      }
+
+      .tune-113 {
+        font-size: 1.080rem;
+      }
+
+      .tune-114 {
+        height: 7.749rem;
+        width: 22.049rem;
+      }
+
+      .tune-115 {
+        height: 3.408rem;
+        width: 22.049rem;
+      }
+
+      .tune-116 {
+        width: 0.850rem;
+      }
+
+      .tune-117 {
+        font-size: 1.020rem;
+        letter-spacing: 0.010rem;
+      }
+
+      .tune-118 {
+        height: 3.368rem;
+      }
+
+      .tune-119 {
+        width: 0.850rem;
+      }
+
+      .tune-120 {
+        font-size: 1.020rem;
+        letter-spacing: 0.010rem;
+      }
+
+      .tune-121 {
+        margin-top: 7.260rem;
+        margin-bottom: 4.500rem; 
+        padding-left: 8.780rem;
+        padding-right: 8.780rem;
+      }
+
+      .tune-122 {
+        width: 7.910rem;
+        transform: translate(0.000rem, -0.750rem);
+      }
+
+      .tune-123 {
+        width: 24.809rem;
+        transform: translate(-3.910rem, 0.000rem);
+      }
+
+      .tune-124 {
+        font-size: 0.867rem;
+        margin-bottom: 0.630rem;
+        margin-top: 0.910rem;
+        line-height: 0.750rem;
+        letter-spacing: 0.010rem;
+      }
+
+      .tune-125 {
+        font-size: 0.870rem;
+        line-height: 1.240rem;
+        letter-spacing: 0.010rem;
+        width: 24.657rem;
+      }
+
+      .tune-126 {
+        width: 6.784rem;
+        transform: translate(0.000rem, 0.500rem);
+      }
+
+      .tune-127 {
+        width: 1.060rem;
+      }
+
+      .tune-128 {
+        width: 1.060rem;
+      }
+
+      .tune-129 {
+        width: 1.060rem;
+      }
+      .tune-135 { width: 17.095rem;transform: translate(-2.000rem, 0.000rem); }
+    }
+
+    @media (min-width:768px) and (max-width:1023px) {
+      body{
+        background-image: url('assets/bg-main-tablet.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      
+      .tune-22 {height: 60.997rem;margin-top: 12.500rem;margin-left: -4.500rem;width: 69.197rem; }
+
+      .tune-100 {
+        height: 16.500rem;
+        padding-left: 4.500rem;
+        margin-bottom: 5.80rem;
+      }
+
+      .tune-101 {
+        width: 15.063rem;
+      }
+
+      .tune-102 {
+        width: 27.250rem;
+        transform: translate(4.750rem, 8.500rem);
+      }
+
+      .tune-103 {
+        padding-left: 4.750rem;
+      }
+
+      .tune-104 {
+        margin-bottom: 14.750rem;
+        width: 58.250rem;
+      }
+
+      .tune-105 {
+        font-size: 6.350rem;
+        width: 43.389rem;
+        line-height: 6.720rem;
+        letter-spacing: 0.024rem;
+        margin-bottom: 4.250rem;
+      }
+
+      .tune-106 {
+        width: 52.178rem;
+        font-size: 1.852rem;
+        letter-spacing: -0.031rem;
+        line-height: 2.660rem;
+      }
+
+      .tune-132 {
+        margin-bottom: 0.320rem;
+      }
+
+      .tune-107 {
+        padding-left: 4.420rem;
+        margin-bottom: 15.380rem;
+      }
+
+      .tune-108 {
+         width: 27.249rem;transform: translate(0.000rem, -12.500rem);
+        height: 57.750rem;
+      }
+
+      .tune-109 {
+        width: 35.749rem;
+        margin-left: -5.750rem;
+        margin-top: 20.500rem;
+        padding-top: 5.180rem;
+        padding-bottom: 5.180rem;
+        height: 63.995rem;
+        padding-left: 5.000rem;
+        padding-right: 5.000rem;
+        transform: translate(0.000rem, 0.500rem);
+      }
+
+      .tune-110 {
+        font-size: 4.080rem;
+        line-height: 3.480rem;
+        margin-bottom: 3.000rem;
+      }
+
+      .tune-111 {
+        font-size: 1.737rem;
+        line-height: 2.750rem;
+        letter-spacing: 0.040rem;
+        margin-bottom: 2.500rem;
+      }
+
+      .tune-112 {
+        font-size: 6.750rem;
+        margin-bottom: 4.090rem;
+      }
+
+      .tune-113 {
+        font-size: 2.130rem;
+        line-height: 2.375rem;
+        transform: translate(0.560rem, 0.500rem);
+      }
+
+      .tune-114 {
+        height: 14.665rem;
+      }
+
+      .tune-115 {
+        margin-bottom: 1.000rem;
+        height: 6.333rem;
+      }
+
+      .tune-116 {
+        width: 1.750rem;
+      }
+
+      .tune-117 {
+        font-size: 1.950rem;
+      }
+
+      .tune-118 {
+        height: 6.083rem;
+      }
+
+      .tune-119 {
+        width: 1.935rem;
+      }
+
+      .tune-120 {
+        font-size: 1.980rem;
+      }
+
+      .tune-17 {
+        margin-left: 4.000rem;
+        width: 15.363rem;
+        margin-bottom: 2.490rem;
+        transform: translate(0.000rem, 0.750rem);
+      }
+
+      .tune-123 {
+        height: 8.446rem;
+      }
+
+      .tune-124 {
+        width: 28.250rem;
+        margin-left: 4.250rem;
+        font-size: 1.701rem;
+        letter-spacing: -0.002rem;
+        margin-bottom: 0.790rem;
+        transform: translate(0.000rem, 1.500rem);
+      }
+
+      .tune-125 {
+        width: 46.250rem;
+        margin-bottom: 4.250rem;
+        margin-left: 4.250rem;
+        font-size: 1.680rem;
+        line-height: 2.430rem;
+        transform: translate(0.000rem, 0.750rem); 
+      }
+      .tune-126 { transform: translate(0.000rem, 0.750rem); }
+
+
+      .tune-133 {
+        font-size: 1.670rem;
+      }
+
+      .tune-134 {
+        padding-right: 4.250rem;
+      }
+
+      .tune-135 { transform: translate(-18.000rem, 0.000rem); }
+
+
+      .tune-126 {
+        width: 12.249rem;
+      }
+
+      .tune-127 {
+        width: 2.000rem;
+      }
+
+      .tune-128 {
+        width: 1.735rem;
+      }
+
+      .tune-129 {
+        width: 2.002rem;
+      }
+    }
+
+    @media (max-width:767px) {
+      body{
+        background-image: url('assets/bg-main-mobile.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .tune-22 {width: 100%; margin-top: 2.750rem;height: 77.598rem; }
+    .tune-100 { height: 32.840rem;margin-bottom: -0.240rem;padding-left: 4.500rem; }
+.tune-101 { width:29.489rem; }
+.tune-102 { width: 13.310rem; }
+.tune-104 { margin-bottom: 14.000rem;width: 76.500rem;padding-left: 4.500rem; }
+.tune-105 { font-size: 8.000rem;letter-spacing: -0.150rem;line-height: 8.400rem;margin-bottom: 8.480rem; }
+.tune-106 { font-size: 3.250rem;line-height: 4.970rem;letter-spacing: 0.040rem; }
+.tune-107 { margin-top: 19.750rem; }
+.tune-108 { width: 44.000rem;margin-bottom: 13.750rem;margin-top: -20.750rem; }
+.tune-109 { width: 79.360rem;  margin-top: -2.500rem;padding-top: 9.86rem;padding-bottom: 9.86rem;height: 128.031rem;padding-left: 4.470rem;padding-right: 4.470rem; }
+.tune-110 { font-size: 8.250rem;line-height: 7.750rem;letter-spacing: 0.100rem;margin-bottom: 6.000rem; }
+.tune-111 { font-size: 3.434rem;line-height: 5.000rem;margin-bottom: 4.750rem; }
+.tune-112 { font-size: 13.500rem; margin-bottom: -5rem;}
+.tune-113 { font-size: 4.590rem;margin-left: 3.000rem; }
+.tune-114 { width: 70.675rem; margin-top: 10.000rem; }
+.tune-115 { margin-bottom: 2.750rem;  width: 70.675rem; height: 13.267rem; }
+.tune-116 { width: 3.080rem; }
+.tune-117 { font-size: 4.030rem; }
+.tune-118 { height: 13.267rem; }
+.tune-119 { width: 3.590rem; }
+.tune-120 { font-size: 4.060rem; }
+.tune-17 { margin-top: 13.500rem;margin-left: 4.250rem;width: 29.858rem;margin-bottom: 7.750rem; }.tune-108 { width: 44.000rem;margin-bottom: 13.750rem; }
+.tune-109 { width: 79.360rem;padding-left: 4.220rem;padding-right: 4.220rem;padding-top: 11.110rem;padding-bottom: 11.110rem;height: 133.033rem; }
+.tune-110 { font-size: 8.250rem;line-height: 7.750rem;letter-spacing: 0.100rem;margin-bottom: 6.000rem; }
+.tune-111 { font-size: 3.434rem;line-height: 5.000rem;margin-bottom: 6.000rem; }
+.tune-112 { font-size: 13.500rem;margin-bottom: -2.000rem; }
+.tune-113 { font-size: 4.590rem;margin-left: 3.000rem; }
+.tune-114 { margin-top: 10.000rem; }
+.tune-115 { margin-bottom: 2.750rem;height: 13.267rem; }
+.tune-116 { width: 3.080rem; }
+.tune-117 { font-size: 4.030rem; }
+.tune-118 { height: 13.267rem; }
+.tune-119 { width: 3.590rem; }
+.tune-120 { font-size: 4.060rem; }
+
+.tune-124 { font-size: 3.356rem;line-height: 4.250rem; }
+.tune-125 { font-size: 3.316rem;line-height: 5.110rem;width: 63.857rem; }
+.tune-126 { margin-top: -4.250rem; }
+.tune-127 { width: 3.626rem; }
+.tune-128 { width: 3.626rem; }
+.tune-129 { width: 3.626rem; }
+.tune-134 { padding-left: 4.500rem;height: 42.267rem; }
+.tune-135 { width: 65.482rem;transform: translate(0.500rem, -1.250rem); }
+.tune-17 { margin-top: 13.500rem;margin-left: 4.250rem;width: 31.110rem;margin-bottom: 7.750rem; }
+    }
+  </style>
+
+</head>
+
+<body class="relative flex flex-col w-full min-h-screen">
+   
+
+  <header class="flex items-center justify-between tune-100">
+
+    <a href="/projects/equalizer-landing-page-premium/">
+      <img class="tune-101" src="./assets/logo.svg" alt="Logo">
+    </a>
+
+    <img class="tune-102 hidden md:block" src="./assets/bg-pattern-1.svg" alt="Logo">
+  </header>
+  <main class="flex flex-col tune-103">
+    <div class="tune-104">
+      <h1 class="main-heading w-fit font-bold tune-105">We make your music sound extraordinary.</h1>
+      <p class="main-paragraph font-medium text-gray-500 text-left tune-106">
+        A system audio equalizer specifically designed for Android and iOS.
+        Freely tune the way your music sounds with a professional grade
+        parametric EQ &amp; volume mixer. Control bass, mids, treble, gain
+        control, reverb, and more!
+      </p>
+    </div>
+    <section class="center-section ">
+      <div class="center-container relative  flex md:flex-row flex-col items-center tune-107">
+        <div class="absolute top-0 flex items-start justify-center bg-blue-600  rounded-[1rem] tune-22 -z-[10] overflow-hidden">
+          <img class="phone tune-135" src="assets/bg-pattern-2.svg">
+        </div> 
+         <img class="phone tune-108 " src="assets/illustration-app.png" alt="a smart phone displaying sound settings">
+
+        <div class="center-info-container tune-109 bg-[#fa7452] md:rounded-[1rem]">
+          <h2 class="center-heading font-bold tune-110">Premium EQ</h2>
+          <p class="center-paragraph text-shadow tune-111">
+            Get expert-level control with a robust equalizer, volume mixer,
+            and spatial audio. Take your listening experience to a whole new
+            level and access all our incredible features!
+          </p>
+          <div class="subscription flex items-center gap-4 font-bold tune-112">$4 <span class="month font-normal tune-113">/ month</span></div>
+
+          <div class="btn-container flex flex-col gap-4 tune-114">
+            <button class="btn ios-btn flex items-center justify-center md:gap-3 gap-6 tune-115 text-white bg-[#191826]  md:rounded-[0.5rem] rounded-[1.5rem]">
+              <img class="btn-icon tune-116" src="assets/icon-apple.svg" alt="">
+              <span class="tune-117 font-bold">iOS Download</span>
+            </button>
+
+            <button class="btn andriod-btn flex items-center justify-center md:gap-3 gap-6 tune-118 bg-white md:rounded-[0.5rem] rounded-[1.5rem]">
+
+              <img class="btn-icon tune-119" src="assets/icon-android.svg" alt="">
+              <span class="tune-120 font-bold">Android Download</span>
+            </button>
+          </div>
+        </div> 
+      </div>
+    </section>
+  </main>
+
+  <footer class=" lg:pb-0 md:pb-[10rem]">
+    <div class="footer-container flex lg:flex-row flex-col lg:items-center justify-between tune-121">
+
+      <div class="logo-container ">
+        <a href="#">
+          <img class="footer-logo tune-17 tune-122" src="assets/logo.svg" alt="equalizer's logo">
+        </a>
+      </div>
+
+      <div class="flex md:flex-row flex-col  md:justify-between justify-start md:items-center items-start gap-[11rem] tune-134">
+        <div class="footer-info tune-123">
+          <p class="copyright tune-124">All rights reserved © Equalizer 2021</p>
+          <p class="copyright tune-125">
+            Have any problems? Contact us via social media or email us at
+            <span class="email font-bold">equalizer@example.com</span>
+          </p>
+        </div>
+
+
+        <div class="social-icons flex justify-between md:gap-4 gap-[7rem] tune-126">
+          <a href="#">
+            <img class="icon tune-127" src="assets/icon-facebook.svg" alt="">
+          </a>
+          <a href="#">
+            <img class="icon tune-128" src="assets/icon-instagram.svg" alt="">
+          </a>
+          <a href="#">
+            <img class="icon tune-129" src="assets/icon-twitter.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  
+</body>
+
+
+
+</html>

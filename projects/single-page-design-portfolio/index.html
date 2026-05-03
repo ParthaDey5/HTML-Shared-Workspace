@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Discover how Amy, a seasoned designer, can bring your design ideas to life. From graphic design to mobile apps and photography, Amy offers tailored design solutions for your project. Book a free consultation today!"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="./src/carousel.css" />
+    <!-- <script defer src="script.js"></script> -->
+    <title>Frontend Mentor | Single-page design portfolio</title>
+  </head>
+  <body>
+    <img src="./design/Desktop_Design.jpg" alt="" class="img-desktop" />
+    <img src="./design/Tablet_Design.jpg" alt="" class="img-tablet" />
+    <img src="./design/Mobile_Design.jpg" alt="" class="img-mobile" />
+
+    <header class="header">
+      <nav>
+        <a class="nav-logo" href="#">
+          <img src="assets/logo.svg" alt="website logo" class="logo" />
+        </a>
+        <a href="#" class="nav-btn">Free Consultation</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="intro">
+        <h1 class="main-heading">Design solutions made easy</h1>
+        <p class="paragraph main-paragraph">
+          With over ten years of experience in various design disciplines, I’m
+          your one-stop shop for your design needs.
+        </p>
+      </div>
+
+      <section class="grid-wrapper">
+        <div class="grid-container">
+          <div class="item graphic">
+            <img
+              src="assets/pattern-graphic-design.svg"
+              alt=""
+              class="pattern"
+            />
+            <p class="item-name">Graphic Design</p>
+          </div>
+
+          <div class="item ui-ux">
+            <img src="assets/pattern-ui-ux.svg" alt="" class="pattern" />
+            <p class="item-name">UI/UX</p>
+          </div>
+
+          <div class="item apps">
+            <img src="assets/pattern-apps.svg" alt="" class="pattern" />
+            <p class="item-name">Apps</p>
+          </div>
+
+          <div class="item photo">
+            <img src="assets/pattern-photography.svg" alt="" class="pattern" />
+            <p class="item-name">Photography</p>
+          </div>
+
+          <div class="item motion">
+            <img
+              src="assets/pattern-motion-graphics.svg"
+              alt=""
+              class="pattern"
+            />
+            <p class="item-name">Motion Graphics</p>
+          </div>
+
+          <div class="item illust">
+            <img
+            src="assets/pattern-illustrations.svg"
+            alt=""
+            class="pattern"
+            />
+            <p class="item-name">Illustrations</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="author-container">
+        <div class="author">
+          <div class="author-img-container">
+            <img
+              src="assets/image-amy.webp"
+              alt="A girl smiling"
+              class="author-img"
+            />
+          </div>
+
+          <div class="bio">
+            <h2 class="sec-heading">
+              I’m Amy, and I’d love to work on your next project
+            </h2>
+            <p class="paragraph">
+              I love working with others to create beautiful design solutions.
+              I’ve designed everything from brand illustrations to complete
+              mobile apps. I’m also handy with a camera!
+            </p>
+            <a href="#" class="btn btn-secondary btn-bio">Free Consultation</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="carousel" class="carousel ">
+        <h3 class="tertiary-heading">My Work</h3>
+
+        <div class="slider-container">
+          <ul class="slider" role="list" aria-label="carousel">
+            <li class="slides">
+              <a href="#carousel">
+                <img
+                  src="assets/image-slide-1.jpg"
+                  alt="design display"
+                  class="slides-img"
+                />
+              </a>
+            </li>
+            <li class="slides">
+              <a href="#carousel">
+                <img
+                  src="assets/image-slide-2.jpg"
+                  alt="design pattern"
+                  class="slides-img"
+                />
+              </a>
+            </li>
+            <li class="slides">
+              <a href="#carousel">
+                <img
+                  src="assets/image-slide-3.jpg"
+                  alt="a man holding a newspaper"
+                  class="slides-img"
+                />
+              </a>
+            </li>
+            <li class="slides">
+              <a href="#carousel">
+                <img
+                  src="assets/image-slide-4.jpg"
+                  alt="a pile of books"
+                  class="slides-img"
+                />
+              </a>
+            </li>
+            <li class="slides">
+              <a href="#carousel">
+                <img
+                  src="assets/image-slide-5.jpg"
+                  alt="a man holding a smartphone"
+                  class="slides-img"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="slider-btn-container" aria-label="carousel controls">
+          <button id="previous" class="slider-btn" aria-label="previous" onclick="slideLeft()">
+            <img src="assets/icon-arrow-left.svg" alt="" class="arrow" />
+          </button>
+          <button id="next" class="slider-btn" aria-label="next" onclick="slideRight()">
+            <img src="assets/icon-arrow-right.svg" alt="" class="arrow" />
+          </button>
+        </div>
+      </section>
+
+      <section class="contact-container hidden">
+        <div class="contact-wrap">
+          <div class="contact">
+            <div class="contact-text">
+              <h2 class="sec-heading contact-heading">Book a call with me</h2>
+              <p class="paragraph contact-paragraph">
+                I’d love to have a chat to see how I can help you. The best
+                first step is for us to discuss your project during a free
+                consultation. Then we can move forward from there.
+              </p>
+            </div>
+
+            <a href="#" class="btn btn-secondary">Free Consultation</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="nav">
+        <a class="nav-logo" href="#">
+          <img src="assets/logo.svg" alt="website logo" class="logo" />
+        </a>
+        <a href="#" class="btn">Free Consultation</a>
+      </div>
+    </footer>
+
+    <script>
+    const btnPrevious = document.querySelector('#previous')
+    const btnNext = document.querySelector('#next')
+    const slider = document.querySelector('.slider')
+
+    const slideLeft = () => {
+      slider.scrollBy({ x: -300, behavior: 'smooth' })
+    }
+    
+    const slideRight = () => {
+      slider.scrollBy({ x: 300, behavior: 'smooth' })
+    }
+    
+    btnPrevious.addEventListener('click', slideLeft)
+    btnNext.addEventListener('click', slideRight)
+    </script>
+  </body>
+</html>
