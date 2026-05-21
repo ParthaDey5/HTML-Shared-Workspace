@@ -1,4 +1,8 @@
 module.exports = {
+  content: [
+    './projects/**/*.html',
+    './projects/**/*.js',
+  ],
   theme: {
     extend: {
       cursor: {

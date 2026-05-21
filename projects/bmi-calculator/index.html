@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description"
+    content="Calculate your Body Mass Index (BMI) and understand what your BMI result means. Learn about healthy weight ranges and get tips for maintaining a healthy lifestyle." />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+  <link rel="stylesheet" href="./src/output.css">
+  <script defer src="apps.js"></script>
+  <title>Frontend Mentor | Body Mass Index Calculator</title>
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('./assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype-variations');
+      font-weight: 100 900;
+      font-style: oblique 0deg 10deg;
+      /* Slant range */
+      font-display: swap;
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: clip;
+
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+input[type=Number] {
+  outline: 1px solid gray
+}
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+    @media (max-width: 767px) {
+      input[type=Number] {
+        font-size: 5.900rem;
+        padding-left: 3.850rem;
+        padding-right: 3.850rem;
+      }
+
+      .tune-2 {
+        height: 21.257rem;
+      }
+      
+       .tune-29{height:230rem;border-radius:4rem; left: 0; right:0;}
+
+      .tune-152 {
+        font-size: 3.450rem;
+        line-height: 5.030rem;
+        font-weight: 600;
+        width: 66.341rem;
+        margin-top: 4.200rem;
+        letter-spacing: -0.100rem;
+        text-align: center;
+        margin-bottom: 9.900rem;
+      }
+
+      .tune-153 {
+        width: 68.542rem;
+        border-radius: 1.5rem;
+        padding-left:5.76rem;padding-right:11.58rem;padding-top:6.09rem;padding-bottom:6.09rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 7.010rem;
+        margin-bottom: -17.850rem;
+      }
+
+      .tune-154 {
+        font-size: 4.500rem;
+        font-weight: 600;
+        width: 52.687rem;
+        letter-spacing: -0.060rem;
+        line-height: 2.990rem;
+      }
+
+      .tune-170 {
+        width: 8.307rem;
+      }
+
+      .tune-185 {
+        width:55.24rem;transform:translate(-0.95rem,0.70rem);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.870rem;
+        padding-left: 2.100rem;
+        padding-right: 2.100rem;
+      }
+
+      .tune-186 {
+        width: 17.557rem;
+        transform: translate(1.050rem, 0.000rem);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 5.600rem;
+      }
+
+      .tune-187 {
+        transform: 8.000rem;
+        transform: scale(3.000);
+      }
+
+      .tune-188 {
+        font-size: 3.200rem;
+        font-weight: 700;
+      }
+
+      .tune-189 {
+        column-gap: 5.950rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 20.424rem;
+        transform: translate(1.400rem, 0.000rem);
+      }
+
+      .tune-190 {
+        transform: 8.000rem;
+        transform: scale(3.000);
+      }
+
+      .tune-191 {
+        font-size: 3.200rem;
+        font-weight: 700;
+      }
+
+      .tune-192 {
+        margin-top: -0.690rem;
+      }
+
+      .tune-193 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 2.100rem;
+        transform: translate(0.320rem, 0.000rem);
+      }
+
+      .tune-196 {
+        width: 55.309rem;
+        border-radius: 1rem;
+        height: 13.052rem;
+      }
+
+      .tune-197 {
+        margin-top: 5.250rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      
+
+      .tune-199 {
+        margin-top: 1.400rem;
+      }
+
+      .tune-200 {
+        width: 57.059rem;
+        height: 13.052rem;
+        border-radius: 1rem;
+      }
+
+      .tune-201 {
+        width: 77.651rem;
+        height: 74.223rem;
+      }
+
+      .tune-202 {
+        margin-top: 9.150rem;
+        padding-left: 5.250rem;
+        padding-right: 5.250rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 6.650rem;
+        margin-bottom: 6.300rem;
+      }
+
+      .tune-203 {
+        font-size: 6.250rem;
+        font-weight: 600;
+        letter-spacing: -0.140rem;
+        line-height: 7.150rem;
+        margin-bottom: -0.420rem;
+      }
+
+      .tune-204 {
+        font-size: 3.250rem;
+        font-weight: 600;
+        line-height: 5.000rem;
+        letter-spacing: 0.018rem;
+      }
+
+      .tune-205 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 9.100rem;
+        align-items: flex-start;
+        padding-left: 4.200rem;
+        padding-right: 4.200rem;
+        margin-top: 27.300rem;
+      }
+
+      .tune-206 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 9.100rem;
+      }
+
+      .tune-207 {
+        width: 10.757rem;
+        transform: 1.220rem;
+        transform: scale(1.220);
+      }
+
+      .tune-208 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 6.520rem;
+        transform: translate(1.050rem, 0.000rem);
+      }
+
+      .tune-209 {
+        font-size: 4.400rem;
+        font-weight: 600;
+        line-height: 3.600rem;
+        transform: translate(-1.050rem, 0.000rem);
+      }
+
+      .tune-210 {
+        font-size: 3.160rem;
+        font-weight: 600;
+        line-height: 4.860rem;
+        letter-spacing: 0.040rem;
+        transform: translate(-1.400rem, 0.000rem);
+      }
+
+      .tune-211 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 67.063rem;
+        line-height: 1.500rem;
+        text-align: left;
+        row-gap: 9.100rem;
+        flex-direction: column;
+        align-items: normal;
+        justify-content: normal;
+      }
+
+      .tune-212 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 10.755rem;
+        transform: 1.220rem;
+        line-height: 1.500rem;
+        height: 10.755rem;
+        text-align: left;
+        transform: scale(1.220);
+      }
+
+      .tune-213 {
+        display: flex;
+        font-size: 1.000rem;
+        line-height: 1.500rem;
+        width: 67.063rem;
+        text-align: left;
+        row-gap: 6.520rem;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: normal;
+      }
+
+      .tune-214 {
+        font-size: 4.400rem;
+        line-height: 3.600rem;
+        font-weight: 600;
+        width: autorem;
+        height: 3.600rem;
+        text-align: left;
+      }
+
+      .tune-215 {
+        font-size: 3.160rem;
+        line-height: 4.860rem;
+        letter-spacing: 0.040rem;
+        font-weight: 600;
+        width: 67.063rem;
+        text-align: left;
+        transform: translate(undefinedrem, undefinedrem);
+      }
+
+      .tune-216 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 67.063rem;
+        line-height: 1.500rem;
+        height: 100%;
+        text-align: left;
+        row-gap: 9.800rem;
+        flex-direction: column;
+        align-items: normal;
+        justify-content: normal;
+      }
+
+      .tune-217 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 10.755rem;
+        transform: 1.220rem;
+        line-height: 1.500rem;
+        height: 10.755rem;
+        text-align: left;
+        transform: translate(1.050rem, 0.700rem) scale(1.220);
+      }
+
+      .tune-218 {
+        display: flex;
+        font-size: 1.000rem;
+        line-height: 1.500rem;
+        width: 67.063rem;
+        height: 100%;
+        text-align: left;
+        row-gap: 6.520rem;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: normal;
+      }
+
+      .tune-219 {
+        font-size: 4.400rem;
+        line-height: 3.600rem;
+        font-weight: 600;
+        width: autorem;
+        height: 3.600rem;
+        text-align: left;
+      }
+
+      .tune-220 {
+        font-size: 3.160rem;
+        line-height: 4.860rem;
+        letter-spacing: 0.040rem;
+        font-weight: 600;
+        width: 67.063rem;
+        height: 14.581rem;
+        text-align: left;
+        transform: translate(undefinedrem, undefinedrem);
+      }
+
+      .tune-221 {
+        margin-top: 7.350rem;
+        row-gap: 5.250rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .tune-222 {
+        padding-left: 2.450rem;
+        padding-right: 2.450rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8.050rem;
+        align-items: center;
+        margin-bottom: 15.400rem;
+      }
+
+      .tune-223 {
+        font-size: 6.250rem;
+        line-height: 5.000rem;
+        font-weight: 600;
+        letter-spacing: -0.120rem;
+        transform: translate(-1.140rem, 0.000rem);
+      }
+
+      .tune-224 {
+        font-size: 3.360rem;
+        line-height: 5.000rem;
+        text-align: center;
+        letter-spacing: -0.040rem;
+        width: 66.361rem;
+        transform: translate(-1.090rem, 0.000rem);
+      }
+
+      .tune-225 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 67.061rem;
+        padding-top: 4.200rem;
+        padding-right: 4.200rem;
+        padding-bottom: 4.200rem;
+        padding-left: 4.200rem;
+        margin-top: -8.050rem;
+        margin-bottom: 8.050rem;
+        border-radius: 1.5rem;
+        flex-direction: column;
+        row-gap: 4.200rem;
+        transform: translate(-0.700rem, 0.000rem);
+      }
+
+      .tune-226 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 4.550rem;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: auto;
+      }
+
+      .tune-227 {
+        transform: 1.220rem;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 5.203rem;
+        transform: scale(1.220);
+      }
+
+      .tune-228 {
+        font-size: 4.150rem;
+        line-height: 2.900rem;
+        font-weight: 600;
+        letter-spacing: -0.230rem;
+        width: 3.488rem;
+      }
+
+      .tune-229 {
+        font-size: 3.450rem;
+        line-height: 5.000rem;
+        letter-spacing: -0.076rem;
+        font-weight: 400;
+        width: NaNrem;
+        padding-right: 3.850rem;
+        height: 100%;
+      }
+
+      .tune-230 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 67.061rem;
+        padding-top: 4.200rem;
+        padding-right: 4.200rem;
+        padding-bottom: 4.200rem;
+        padding-left: 4.200rem;
+        margin-top: -8.050rem;
+        margin-bottom: 8.050rem;
+        border-radius: 1.5rem;
+        flex-direction: column;
+        row-gap: 4.200rem;
+        transform: translate(-0.700rem, 0.000rem);
+      }
+
+      .tune-231 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 4.550rem;
+      }
+
+      .tune-232 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 5.203rem;
+        transform: 1.220rem;
+        transform: scale(1.220);
+      }
+
+      .tune-233 {
+        font-size: 4.150rem;
+        line-height: 2.900rem;
+        letter-spacing: -0.230rem;
+        font-weight: 600;
+        width: 3.488rem;
+      }
+
+      .tune-234 {
+        font-size: 3.450rem;
+        line-height: 5.000rem;
+        letter-spacing: -0.076rem;
+        font-weight: 400;
+        width: auto;
+        padding-right: 3.150rem;
+        height: 100%;
+      }
+
+      .tune-235 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 67.061rem;
+        padding-top: 4.200rem;
+        padding-right: 4.200rem;
+        padding-bottom: 4.200rem;
+        padding-left: 4.200rem;
+        margin-top: -8.050rem;
+        margin-bottom: 8.050rem;
+        border-radius: 1.5rem;
+        flex-direction: column;
+        row-gap: 4.200rem;
+        transform: translate(-0.700rem, 0.000rem);
+      }
+
+      .tune-236 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 4.550rem;
+      }
+
+      .tune-237 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 5.203rem;
+        transform: 1.220rem;
+        transform: scale(1.220);
+      }
+
+      .tune-238 {
+        font-size: 4.150rem;
+        line-height: 2.900rem;
+        letter-spacing: -0.230rem;
+        font-weight: 600;
+        width: 3.488rem;
+      }
+
+      .tune-239 {
+        font-size: 3.450rem;
+        line-height: 5.000rem;
+        letter-spacing: -0.076rem;
+        font-weight: 400;
+        width: auto;
+        padding-right: 3.850rem;
+        height: 100%;
+      }
+
+      .tune-240 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 67.061rem;
+        padding-top: 4.200rem;
+        padding-right: 4.200rem;
+        padding-bottom: 4.200rem;
+        padding-left: 4.200rem;
+        margin-top: -8.050rem;
+        margin-bottom: 8.050rem;
+        border-radius: 1.5rem;
+        flex-direction: column;
+        row-gap: 4.200rem;
+        transform: translate(-0.700rem, 0.000rem);
+      }
+
+      .tune-241 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 4.550rem;
+      }
+
+      .tune-242 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 5.203rem;
+        transform: 1.220rem;
+        transform: scale(1.220);
+      }
+
+      .tune-243 {
+        font-size: 4.150rem;
+        line-height: 2.900rem;
+        letter-spacing: -0.230rem;
+        font-weight: 600;
+        width: 3.488rem;
+      }
+
+      .tune-244 {
+        font-size: 3.450rem;
+        line-height: 5.000rem;
+        letter-spacing: -0.076rem;
+        font-weight: 400;
+        width: auto;
+        padding-right: 3.850rem;
+        height: 100%;
+      }
+
+      .tune-245 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 67.061rem;
+        padding-top: 4.200rem;
+        padding-right: 4.200rem;
+        padding-bottom: 4.200rem;
+        padding-left: 4.200rem;
+        margin-top: -8.050rem;
+        border-radius: 1.5rem;
+        flex-direction: column;
+        row-gap: 4.200rem;
+        transform: translate(-0.700rem, 0.000rem);
+        margin-bottom: 25rem;
+      }
+
+      .tune-246 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 4.550rem;
+      }
+
+      .tune-247 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 5.203rem;
+        transform: 1.220rem;
+        transform: scale(1.220);
+      }
+
+      .tune-248 {
+        font-size: 4.150rem;
+        line-height: 2.900rem;
+        letter-spacing: -0.230rem;
+        font-weight: 600;
+        width: 3.488rem;
+      }
+
+      .tune-249 {
+        font-size: 3.450rem;
+        line-height: 5.000rem;
+        letter-spacing: -0.076rem;
+        font-weight: 400;
+        width: auto;
+        padding-right: 1.400rem;
+        height: 100%;
+      }
+
+      .tune-253 {
+        font-size: 3.450rem;
+      }
+
+      .tune-254 {
+        font-size: 3.030rem;
+        line-height: 4.360rem;
+        letter-spacing: -0.049rem;
+      }
+
+      .tune-256 {
+        background-color: #335ff6; color:#fff;
+        display: flex;
+        flex-direction: column;
+        width: 57.124rem;
+        margin-top: -1.050rem;
+        border-radius: 1.5rem;
+        height: 51.977rem;
+        padding-top: 5.990rem;
+        padding-right: 5.990rem;
+        padding-bottom: 5.990rem;
+        padding-left: 5.990rem;
+      }
+
+      .tune-257 {
+        margin-bottom: 3.580rem;
+      }
+
+      .tune-258 {
+        font-size: 10.100rem;
+        font-weight: 600;
+        line-height: 13.750rem;
+        letter-spacing: -0.380rem;
+      }
+
+      .tune-259 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.690rem;
+        width: 57.124rem;
+      }
+
+      .tune-260, .tune-264, .tune-194,.tune-198 {
+        font-size: 2.800rem;
+        font-weight: 600;
+        transform: translate(-0.350rem, -1.050rem);
+      }
+
+      .tune-261 {
+        height: 13.752rem;
+        border-radius: 1.5rem;
+      }
+
+
+      .tune-263 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 57.124rem;
+        margin-top: -0.300rem;
+        flex-direction: column;
+        row-gap: 0.690rem;
+      }
+
+      
+
+      .tune-265 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 100%;
+        height: 13.752rem;
+        border-radius: 1.5rem;
+      }
+
+      .tune-259 {
+        margin-bottom: 4.900rem;
+        transform: translate(undefinedrem, undefinedrem);
+      }
+
+      .tune-262 {
+        font-size: 3.637rem;
+        font-weight: 600;
+        transform: translate(49.350rem, 9.100rem);
+      }
+
+      .tune-266 {
+        font-size: 3.637rem;
+        line-height: 6.750rem;
+        font-weight: 600;
+        width: 6.425rem;
+        height: 6.751rem;
+        text-align: left;
+        transform: translate(49.350rem, 9.100rem);
+      }
+
+      .tune-195 {
+        width: 56.700rem;
+        display: flex;
+        justify-content: space-between;transform:translate(0.00rem,-0.78rem);
+      }
+
+      .tune-196 {
+        width: 27.657rem;
+      }
+
+      .tune-267 {
+        font-size: 3.637rem;
+        line-height: 6.750rem;
+        font-weight: 600;
+        width: 6.425rem;
+        height: 6.751rem;
+        text-align: left;
+        transform: translate(22.050rem, 3.500rem);
+      }
+
+      .tune-268 {
+        width: 26.761rem;
+        border-radius: 1.5rem;
+      }
+
+      .tune-269 {
+        font-size: 3.637rem;
+        line-height: 6.750rem;
+        font-weight: 600;
+        width: 6.425rem;
+        height: 6.751rem;
+        text-align: left;
+        transform: translate(51.450rem, 3.500rem);
+      }
+
+      .tune-198{transform:translate(-0.35rem,-1.59rem);}
+      .tune-199 {
+        display: flex;
+        font-weight: 400;
+        width: 57.300rem;
+        justify-content: space-between;
+        height: 100%;
+        text-align: left;transform:translate(0.00rem,-0.70rem);
+      }
+
+      .tune-200 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 27.657rem;
+        line-height: 1.500rem;
+        height: 13.051rem;
+        text-align: left;
+        border-radius: 1.000rem;
+      }
+
+      .tune-270 {
+        font-size: 3.637rem;
+        line-height: 6.750rem;
+        font-weight: 600;
+        width: 6.425rem;
+        height: 6.751rem;
+        text-align: left;
+        transform: translate(22.050rem, 3.500rem);
+      }
+
+      .tune-271 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 26.761rem;
+        border-radius: 1.5rem;
+      }
+
+      .tune-272 {
+        font-size: 3.637rem;
+        line-height: 6.750rem;
+        font-weight: 600;
+        width: 6.425rem;
+        height: 6.751rem;
+        text-align: left;
+        transform: translate(50.050rem, 3.500rem);
+      }
+
+      .tune-273 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .tune-274 {
+        background-color: #335ff6; color:#fff;
+        width: 57.050rem;
+        border-radius: 1.5rem;
+        padding-top: 4.550rem;
+        padding-right: 4.550rem;
+        padding-bottom: 4.550rem;
+        padding-left: 4.550rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.750rem;
+        margin-top:-1.76rem;
+        
+      }
+
+      .tune-275 {
+        font-size: 3.450rem;
+        line-height: 5.175rem;
+        font-weight: 700;
+        width: 21.009rem;
+        height: 5.175rem;
+        text-align: left;
+      }
+
+      .tune-276 {
+        font-size: 3.030rem;
+        line-height: 4.360rem;
+        letter-spacing: -0.049rem;
+        font-weight: 400;
+        width: 45.147rem;
+        height: 13.079rem;
+        text-align: left;
+      }
+
+      .tune-277 {
+        font-size: 9.340rem;
+        line-height: 10.750rem;
+        width: 50.243rem;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: -0.231rem;
+        transform: translate(0.000rem, -1.400rem);
+      }
+
+    }
+
+    @media (min-width:768px) and (max-width:1023px) {
+      .tune-1 {
+        height: 10.056rem;
+        margin-bottom: 1.050rem;
+      }
+
+      .tune-2 {
+        height: 10.450rem;
+        margin-bottom: 0.700rem;
+      }
+
+      .tune-3 {
+        height: 53.986rem;
+        margin-bottom: 12.600rem;
+      }
+
+      .tune-4 {
+        font-size: 1.400rem;
+        line-height: 2.160rem;
+        font-weight: 600;
+        width: 25.570rem;
+        margin-right: 1.750rem;
+        height: 6.480rem;
+        text-align: left;
+        transform: translate(-0.220rem, 0.000rem);
+      }
+      .tune-29{height:119rem;border-radius:4rem; left: 0; right:0;}
+
+      .tune-152 {
+        width: 68.296rem;
+        margin-top: 2.450rem;
+        font-size: 1.630rem;
+        text-align: center;
+        line-height: 2.450rem;
+      }
+
+      .tune-153 {
+        margin-top: 4.200rem;
+        width: 69.550rem;
+        padding-top: 2.880rem;
+        padding-bottom: 4rem;
+        padding-left: 2.800rem;
+        padding-right:3.61rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 3.50rem;
+        border-radius: 1.5rem;
+        
+      }
+
+      .tune-154 {
+        font-weight: 700;
+        font-size: 2.180rem;
+      }
+
+      .tune-170 {
+        width: 4.500rem;
+      }
+
+      .tune-185 {
+        display: flex;
+        flex-direction: row;
+        width: 43.711rem;
+        justify-content: space-between;
+        transform: translate(0.700rem, 0.000rem);
+      }
+
+      .tune-186 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 2.800rem;
+      }
+
+      .tune-187 {
+        transform: 2.280rem;
+        transform: scale(2.280);
+      }
+
+      .tune-188 {
+        font-size: 1.630rem;
+        font-weight: 600;
+      }
+
+      .tune-190 {
+        transform: 2.280rem;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 1.347rem;
+        line-height: 1.500rem;
+        height: 1.347rem;
+        text-align: left;
+        transform: scale(2.280);
+      }
+
+      .tune-191 {
+        font-size: 1.630rem;
+        font-weight: 600;
+        margin-left: 2.450rem;
+        line-height: 2.445rem;
+        height: 2.445rem;
+        text-align: left;
+      }
+      .tune-195{display:flex;flex-direction:row;justify-content:space-between;margin-top:0.97rem;margin-bottom:1.05rem;}
+
+      .tune-199{display:flex;font-size:1.00rem;font-weight:400;margin-top:0.97rem;margin-bottom:1.05rem;flex-direction:row;justify-content:space-between;line-height:1.50rem;height:6.75rem;text-align:left; }
+
+      .tune-200{font-size:4.15rem;font-weight:700;width:30.02rem;padding-left:2.35rem;line-height:6.22rem;height:6.75rem;text-align:left;}
+
+      .tune-201 {
+        width: 26.994rem;
+        transform: translate(-0.700rem, -1.750rem);
+        scale: 1.610;
+      }
+
+      .tune-202 {
+        width: 35.396rem;
+        transform: translate(39.900rem, -32.550rem);
+      }
+
+      .tune-203 {
+        font-weight: 700;
+        font-size: 2.960rem;
+        line-height: 3.250rem;
+        margin-bottom: 3.850rem;
+      }
+
+      .tune-204 {
+        font-size: 1.660rem;
+        letter-spacing: -0.006rem;
+        font-weight: 400;
+        line-height: 2.430rem;
+        width: 34.956rem;
+      }
+
+      .tune-206 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 3.850rem;
+        padding-right: 3.850rem;
+      }
+
+      .tune-207 {
+        width: 6.632rem;
+      }
+
+      .tune-208 {
+        height: 12.798rem;
+        margin-left: 4.200rem;
+        transform: translate(0.000rem, 1.750rem);
+        transform: translate(0.000rem, 1.050rem);
+      }
+
+      .tune-209 {
+        font-weight: 700;
+        font-size: 2.200rem;
+      }
+
+      .tune-210 {
+        margin-top: 1.750rem;
+        font-size: 1.720rem;
+        line-height: 2.280rem;
+        letter-spacing: -0.040rem;
+        width: 52.063rem;
+        transform: translate(0.000rem, 0.700rem);
+      }
+
+      .tune-211 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 78.446rem;
+        padding-right: 3.850rem;
+        padding-left: 3.850rem;
+        margin-top: 1.750rem;
+        flex-direction: row;
+        align-items: center;
+        line-height: 1.500rem;
+        height: 12.448rem;
+        text-align: left;
+      }
+
+      .tune-212 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 6.632rem;
+        line-height: 1.500rem;
+        height: 6.631rem;
+        text-align: left;
+      }
+
+      .tune-213 {
+        font-weight: 400;
+        width: 58.363rem;
+        height: 12.798rem;
+        margin-left: 4.200rem;
+        text-align: left;
+        transform: translate(0.000rem, 1.750rem);
+      }
+
+      .tune-214 {
+        font-size: 2.200rem;
+        line-height: 1.500rem;
+        font-weight: 700;
+        width: auto;
+        height: 1.499rem;
+        text-align: left;
+      }
+
+      .tune-215 {
+        font-size: 1.720rem;
+        line-height: 2.280rem;
+        letter-spacing: -0.040rem;
+        font-weight: 400;
+        width: 63.263rem;
+        margin-top: 1.750rem;
+        height: 100%;
+        text-align: left;
+        transform: translate(0.000rem, 1.750rem);
+      }
+
+      .tune-216 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 78.446rem;
+        padding-right: 3.850rem;
+        padding-left: 3.850rem;
+        margin-top: 1.750rem;
+        flex-direction: row;
+        align-items: center;
+        line-height: 1.500rem;
+        height: 12.798rem;
+        text-align: left;
+      }
+
+      .tune-217 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 6.632rem;
+        line-height: 1.500rem;
+        height: 6.631rem;
+        text-align: left;
+      }
+
+      .tune-218 {
+        font-weight: 400;
+        width: 56.263rem;
+        height: 12.798rem;
+        margin-left: 4.200rem;
+        text-align: left;
+        transform: translate(0.000rem, 1.750rem);
+      }
+
+      .tune-219 {
+        font-size: 2.200rem;
+        line-height: 1.500rem;
+        font-weight: 700;
+        width: auto;
+        height: 1.499rem;
+        text-align: left;
+      }
+
+      .tune-220 {
+        font-size: 1.720rem;
+        line-height: 2.280rem;
+        letter-spacing: -0.040rem;
+        font-weight: 400;
+        width: 56.263rem;
+        margin-top: 1.750rem;
+        height: 4.560rem;
+        text-align: left;
+        transform: translate(0.000rem, 1.750rem);
+      }
+
+      .tune-221 {
+        height: 109.793rem;
+      }
+
+      .tune-222 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3.060rem;
+      }
+
+      .tune-223 {
+        font-weight: 700;
+        font-size: 2.880rem;
+        line-height: 1.850rem;
+      }
+
+      .tune-224 {
+        width: 68.056rem;
+        text-align: center;
+        font-size: 1.700rem;
+        letter-spacing: -0.030rem;
+        line-height: 2.550rem;
+        margin-top: 3.850rem;
+      }
+
+      .tune-225 {
+        width: 33.646rem;
+        margin-top: 6.650rem;
+        padding-top: 2.100rem;
+        padding-bottom: 2.100rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transform: translate(4.200rem, 0.000rem);
+      }
+
+      .tune-226 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 2.800rem;
+      }
+
+      .tune-227 {
+        width: 3.316rem;
+      }
+
+      .tune-228 {
+        font-size: 2.050rem;
+        font-weight: 700;
+        margin-left: 1.750rem;
+        letter-spacing: -0.110rem;
+      }
+
+      .tune-229 {
+        width: 27.663rem;
+        font-size: 1.700rem;
+        letter-spacing: -0.030rem;
+        line-height: 2.440rem;
+        margin-top: 1.750rem;
+        transform: translate(3.150rem, 0.000rem);
+      }
+
+      .tune-230 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 33.646rem;
+        padding-top: 2.100rem;
+        padding-bottom: 2.100rem;
+        margin-top: 6.650rem;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1.500rem;
+        height: 22.161rem;
+        text-align: left;
+        transform: translate(40.250rem, -28.000rem);
+      }
+
+      .tune-231 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 78.446rem;
+        padding-left: 2.800rem;
+        flex-direction: row;
+        align-items: center;
+        line-height: 1.500rem;
+        height: 3.314rem;
+        text-align: left;
+      }
+
+      .tune-232 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 3.316rem;
+        line-height: 1.500rem;
+        height: 3.314rem;
+        text-align: left;
+      }
+
+      .tune-233 {
+        font-size: 2.050rem;
+        line-height: 1.500rem;
+        letter-spacing: -0.110rem;
+        font-weight: 700;
+        width: 3.483rem;
+        margin-left: 1.750rem;
+        height: 1.499rem;
+        text-align: left;
+      }
+
+      .tune-234 {
+        font-size: 1.700rem;
+        line-height: 2.440rem;
+        letter-spacing: -0.030rem;
+        font-weight: 400;
+        width: 27.663rem;
+        margin-top: 1.750rem;
+        height: 12.200rem;
+        text-align: left;
+        transform: translate(3.150rem, 0.000rem);
+      }
+
+      .tune-235 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 33.646rem;
+        padding-top: 2.800rem;
+        padding-bottom: 2.800rem;
+        margin-top: 6.650rem;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1.500rem;
+        height: 25.311rem;
+        text-align: left;
+        transform: translate(4.200rem, -31.500rem);
+      }
+
+      .tune-236 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 78.446rem;
+        padding-left: 2.800rem;
+        flex-direction: row;
+        align-items: center;
+        line-height: 1.500rem;
+        height: 3.314rem;
+        text-align: left;
+      }
+
+      .tune-237 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 3.316rem;
+        line-height: 1.500rem;
+        height: 3.314rem;
+        text-align: left;
+      }
+
+      .tune-238 {
+        font-size: 2.050rem;
+        line-height: 1.500rem;
+        letter-spacing: -0.110rem;
+        font-weight: 700;
+        width: 3.483rem;
+        margin-left: 1.750rem;
+        height: 1.499rem;
+        text-align: left;
+      }
+
+      .tune-239 {
+        font-size: 1.700rem;
+        line-height: 2.440rem;
+        letter-spacing: -0.030rem;
+        font-weight: 400;
+        width: 27.663rem;
+        margin-top: 1.750rem;
+        height: 12.200rem;
+        text-align: left;
+        transform: translate(3.150rem, 0.000rem);
+      }
+
+      .tune-240 {
+        width: 33.600rem;
+        padding-top: 2.800rem;
+        padding-bottom: 2.800rem;
+        transform: translate(40.250rem, -56.700rem);
+      }
+
+      .tune-241 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 78.446rem;
+        padding-left: 2.800rem;
+        flex-direction: row;
+        align-items: center;
+        line-height: 1.500rem;
+        height: 3.314rem;
+        text-align: left;
+      }
+
+      .tune-242 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 3.316rem;
+        line-height: 1.500rem;
+        height: 3.314rem;
+        text-align: left;
+      }
+
+      .tune-243 {
+        font-size: 2.050rem;
+        line-height: 1.500rem;
+        letter-spacing: -0.110rem;
+        font-weight: 700;
+        width: 3.483rem;
+        margin-left: 1.750rem;
+        height: 1.499rem;
+        text-align: left;
+      }
+
+      .tune-244 {
+        font-size: 1.700rem;
+        line-height: 2.440rem;
+        letter-spacing: -0.030rem;
+        font-weight: 400;
+        width: 27.663rem;
+        margin-top: 1.750rem;
+        height: 12.200rem;
+        text-align: left;
+        transform: translate(3.150rem, 0.000rem);
+      }
+
+      .tune-245 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 36.446rem;
+        padding-top: 2.800rem;
+        padding-bottom: 0.700rem;
+        margin-top: 6.650rem;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1.500rem;
+        height: 23.211rem;
+        text-align: left;
+        transform: translate(20.650rem, -57.750rem);
+      }
+
+      .tune-246 {
+        display: flex;
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 78.446rem;
+        padding-left: 2.800rem;
+        flex-direction: row;
+        align-items: center;
+        line-height: 1.500rem;
+        height: 3.314rem;
+        text-align: left;
+      }
+
+      .tune-247 {
+        font-size: 1.000rem;
+        font-weight: 400;
+        width: 3.316rem;
+        line-height: 1.500rem;
+        height: 3.314rem;
+        text-align: left;
+      }
+
+      .tune-248 {
+        font-size: 2.050rem;
+        line-height: 1.500rem;
+        letter-spacing: -0.110rem;
+        font-weight: 700;
+        width: 3.483rem;
+        margin-left: 1.750rem;
+        height: 1.499rem;
+        text-align: left;
+      }
+
+      .tune-249 {
+        font-size: 1.700rem;
+        line-height: 2.440rem;
+        letter-spacing: -0.030rem;
+        font-weight: 400;
+        width: 30.113rem;
+        margin-top: 1.750rem;
+        height: 12.200rem;
+        text-align: left;
+        transform: translate(3.150rem, 0.000rem);
+      }
+
+      .tune-253 {
+        font-size: 1.700rem;
+        font-weight: 700;
+      }
+
+      .tune-254 {
+        width: 25.450rem;
+        font-size: 1.400rem;
+        font-weight: 600;
+        margin-right: 1.750rem;
+        line-height: 2.160rem;
+        transform: translate(-0.220rem, 0.000rem);
+      }
+
+      .tune-256 {
+        background-color: #335ff6; color:#fff;
+        width: 62.900rem;
+        height: 14.390rem;
+        margin-top: 0.520rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 2.800rem;
+        padding-right: 2.800rem;
+        transform: translate(0.360rem, 0.000rem);
+      }
+
+      .tune-257 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.600rem;
+      }
+
+      .tune-258 {
+        font-size: 4.9rem;
+        line-height: 4.650rem;
+        font-weight: 700;
+      }
+
+      .tune-259 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.780rem;
+      }
+
+      .tune-260, .tune-264,.tune-194,.tune-198 {
+        font-size: 1.440rem;
+        font-weight: 700;
+      }
+
+      .tune-261, .tune-265, .tune-200, .tune-271, .tune-196, .tune-268 {
+        height: 6.751rem;
+        width: 30.025rem;
+        font-size: 4.150rem;
+        font-weight: 700;
+        padding-left: 2.350rem;
+        border-radius:1.30rem;
+      }
+
+      .tune-262{font-weight:700;font-size:2.75rem;transform:translate(24.85rem,4rem);}
+
+      .tune-263 {
+        margin-left: 3.050rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .tune-264 {
+        font-weight: 700;
+        font-size: 1.350rem;
+        row-gap: 3.150rem;
+        margin-bottom: 0.930rem;
+      }
+
+
+      .tune-266{font-size:2.75rem;line-height:1.50rem;font-weight:700;width:1.43rem;height:1.50rem;text-align:left;transform:translate(24.85rem,5.60rem);}
+
+      .tune-267{font-size:2.68rem;line-height:2.20rem;font-weight:700;width:0.82rem;height:2.20rem;text-align:left;transform:translate(26.58rem,2.10rem);}
+.tune-269{font-weight:700;font-size:2.68rem;line-height:2.20rem;transform:translate(58.80rem,2.10rem);}
+.tune-270{font-size:2.68rem;line-height:2.20rem;font-weight:700;width:0.82rem;height:2.20rem;text-align:left;transform:translate(25.99rem,2.10rem);}
+.tune-272{font-size:2.68rem;line-height:2.20rem;font-weight:700;width:0.82rem;height:2.20rem;text-align:left;transform:translate(57.53rem,2.10rem);}
+
+
+      .tune-271{font-size:4.15rem;font-weight:700;width:30.02rem;padding-left:2.35rem;line-height:6.22rem;height:6.75rem;text-align:left;}
+
+
+      .tune-273 {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .tune-274 {
+        background-color: #335ff6; color:#fff;
+        height: 14.199rem;
+        padding-top:2.80rem;padding-right:2.45rem;padding-bottom:2.80rem;padding-left:2.45rem;height:14.87rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 62.900rem;
+        transform: translate(0.350rem, 0.000rem);
+      }
+
+      .tune-275 {
+        margin-left: 0.470rem;
+        margin-top: 0.350rem;
+        font-weight: 700;
+        font-size: 2.050rem;
+      }
+
+      .tune-276 {
+        font-size: 1.80rem;
+        line-height: 2.200rem;
+        margin-top: 1.400rem;
+      }
+
+      .tune-277 {
+        font-size: 4.930rem;
+        width: 36.018rem;
+        text-align: center;
+        font-weight: 700;
+        line-height: 5.700rem;
+        letter-spacing: -0.309rem;
+      }
+
+
+    }
+
+    @media (min-width:1024px){.tune-2{height:8.670rem;display:flex;justify-content:flex-start;padding-left:7.590rem;}.tune-28{width:5.06rem;transform:translate(62.30rem,-3.85rem);}
+    .tune-29{width:54.90rem;height:71.79rem;border-radius:2.00rem; left: 0;}
+.tune-170{width:3.630rem;transform:translate(0.000rem,1.400rem);}
+.tune-21{display:flex;flex-direction:row;align-items:flex-start;justify-content:space-between;padding-left:7.830rem;padding-right:7.830rem;column-gap:5.950rem;}
+.tune-151{width:26.791rem;display:flex;flex-direction:column;align-items:flex-start;row-gap:1.950rem;transform:translate(0.000rem,6.400rem);}
+.tune-277{font-weight:700;font-size:3.210rem;letter-spacing:-0.050rem;width:25.647rem;line-height:3.650rem;}
+.tune-152{font-size:0.920rem;letter-spacing:-0.023rem;width:25.520rem;line-height:1.370rem;}
+.tune-153{width:30.606rem;border-radius:0.800rem;padding-left:1.490rem;padding-right:1.490rem;display:flex;flex-direction:column;row-gap:1.870rem;height:100%;padding-top:1.400rem;padding-bottom:1.75rem;transform:translate(0.000rem,1.400rem);}
+.tune-154{font-weight:700;font-size:1.233rem;letter-spacing:-0.030rem;}
+.tune-185{width:20.63rem;display:flex;flex-direction:row;align-items:center;justify-content:space-between;}
+.tune-186{display:flex;flex-direction:row;align-items:center;column-gap:1.260rem;transform:translate(0.630rem,0.000rem);}
+.tune-187{width:0.766rem;scale:2.120;}
+.tune-188{font-weight:600;font-size:0.900rem;}
+.tune-189{display:flex;flex-direction:row;margin-right:-0.05rem;}
+.tune-190{font-size:1.000rem;font-weight:400;width:0.766rem;line-height:1.500rem;height:0.766rem;text-align:left;scale:2.120;transform:translate(0.000rem,0.120rem);}
+.tune-191{font-size:0.900rem;font-weight:600;margin-left:1.400rem;line-height:1.350rem;height:fit-content;text-align:left;column-gap:1.400rem;}
+.tune-194{font-size:0.900rem;font-weight:600;line-height:1.350rem;height:1.350rem;text-align:left;}
+.tune-195{display:flex;flex-direction:row;justify-content:space-between;transform:translate(0.00rem,0.00rem);}
+.tune-199{display:flex;font-size:1.00rem;letter-spacing:0.00rem;font-weight:400;width:27.63rem;padding-top:0.00rem;padding-right:0.00rem;padding-bottom:0.00rem;padding-left:0.00rem;margin-top:0.00rem;margin-right:0.00rem;margin-bottom:0.00rem;margin-left:0.00rem;flex-direction:row;justify-content:space-between;line-height:1.50rem;height:3.59rem;text-align:left;align-items:center;transform:translate(0.00rem,0.00rem);}
+.tune-200{font-size:1.52rem;line-height:2.28rem;font-weight:600;width:12.89rem;height:3.59rem;text-align:left;padding-left:0.65rem;border-radius:0.50rem;transform:translate(0.00rem,0.00rem);}
+.tune-270{font-size:1.00rem;line-height:1.50rem;font-weight:600;width:0.76rem;height:1.50rem;text-align:left;}
+.tune-271{font-size:1.52rem;letter-spacing:0.00rem;font-weight:600;width:12.89rem;padding-top:0.00rem;padding-right:0.00rem;padding-bottom:0.00rem;padding-left:0.65rem;margin-top:0.00rem;margin-right:0.00rem;margin-bottom:0.00rem;margin-left:0.00rem;border-radius:0.50rem;line-height:2.28rem;height:3.59rem;text-align:left;transform:translate(0.00rem,0.00rem);}
+.tune-272{font-size:1.00rem;line-height:1.50rem;font-weight:600;width:0.87rem;height:1.50rem;text-align:left;}
+.tune-194{margin-bottom:3.85rem;transform:translate(0.00rem,0.00rem);}
+.tune-195{margin-bottom:0.70rem;margin-top:0.35rem;transform:translate(0.00rem,0.00rem);}
+.tune-267{font-weight:600;transform:translate(11.20rem,1.05rem);}
+.tune-269{font-weight:600;transform:translate(25.90rem,1.05rem);}
+.tune-199{margin-top:0.35rem;transform:translate(0.00rem,0.00rem);}
+.tune-270{font-weight:600;transform:translate(11.20rem,0.00rem);}
+.tune-272{font-weight:600;transform:translate(25.90rem,0.00rem);}
+.tune-260,.tune-264,.tune-194,.tune-198 {font-size:0.78rem;font-weight:700;}
+.tune-261, .tune-265{width:12.89rem;height:3.59rem;border-radius:0.50rem;padding-left:0.65rem;font-size:1.52rem;font-weight:600; transform:translate(0.00rem,0.36rem);}
+.tune-196, .tune-268,.tune-200,.tune-271{width:12.89rem;height:3.59rem;border-radius:0.50rem;padding-left:0.65rem;font-size:1.52rem;font-weight:600; transform:translate(0.00rem,0.01rem);}
+.tune-262, .tune-266{font-weight:600;transform:translate(10.85rem,-2.45rem); transform:translate(10.85rem,-2.17rem);}
+.tune-263{width:13.89rem;}
+.tune-198{font-size:0.900rem;font-weight:600;line-height:1.350rem;height:1.350rem;text-align:left;}
+.tune-3{display:flex;flex-direction:row;align-items:flex-start;justify-content:space-between;padding-left:2.690rem;padding-right:2.690rem;margin-top:11.200rem;}
+.tune-201{width:30.800rem; transform:translate(-3.500rem,0.000rem);}
+.tune-202{margin-right:5.190rem;width:25.200rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;transform:translate(0.000rem,9.900rem);}
+.tune-203{font-weight:700;font-size:2.610rem;letter-spacing:-0.150rem;line-height:2.900rem;}
+.tune-204{width:25.176rem;margin-top:1.960rem;font-size:0.860rem;line-height:1.330rem;}
+.tune-205{display:flex;flex-direction:row;margin-top:9.100rem;align-items:flex-start;justify-content:flex-start;}
+.tune-206{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;row-gap:2.430rem;width:19.966rem;margin-left:7.700rem;}
+.tune-207{width:3.610rem;}
+.tune-208{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;row-gap:1.270rem;}
+.tune-209{font-weight:700;font-size:1.290rem; letter-spacing:-0.064rem;}
+.tune-210{font-size:0.880rem; letter-spacing:-0.002rem;line-height:1.280rem;}
+.tune-211{margin-left:1.810rem;row-gap:2.620rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;}
+.tune-212{font-size:1.000rem;font-weight:400;width:3.610rem;line-height:1.500rem;height:3.609rem;text-align:left;}
+.tune-213{display:flex;font-size:1.000rem;font-weight:400;width:20.362rem;flex-direction:column;align-items:flex-start;justify-content:flex-start;row-gap:1.270rem;line-height:1.500rem;height:6.851rem;text-align:left;}
+.tune-214{font-size:1.290rem;line-height:1.500rem;letter-spacing:-0.050rem;font-weight:700;width:100%;height:1.500rem;text-align:left;}
+.tune-215{font-size:0.880rem;line-height:1.360rem;font-weight:400;width:100%;height:100%;text-align:left;}
+.tune-216{display:flex;font-size:1.000rem;font-weight:400;width:20.362rem;margin-left:1.460rem;flex-direction:column;align-items:flex-start;justify-content:flex-start;row-gap:2.620rem;line-height:1.500rem;height:13.078rem;text-align:left;}
+.tune-217{font-size:1.000rem;line-height:1.500rem;font-weight:400;width:3.610rem;height:3.609rem;text-align:left;}
+.tune-218{display:flex;font-size:1.000rem;line-height:1.500rem;font-weight:400;width:20.362rem;height:6.851rem;text-align:left;flex-direction:column;align-items:flex-start;justify-content:flex-start;row-gap:1.270rem;}
+.tune-219{font-size:1.290rem;line-height:1.500rem;letter-spacing:-0.050rem;font-weight:700;width:100%;height:1.500rem;text-align:left;}
+.tune-220{font-size:0.880rem;line-height:1.360rem;font-weight:400;width:100%;height:100%;text-align:left;}
+.tune-221{margin-top:4.900rem;height:44.919rem;}
+.tune-222{width:29.226rem;margin-left:7.810rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;row-gap:2.100rem;}
+.tune-223{font-weight:700;font-size:2.570rem;line-height:2.390rem;letter-spacing:-0.130rem;}
+.tune-224{font-size:0.870rem;line-height:1.350rem;}
+.tune-225{width:19.616rem;height:12.286rem;border-radius:0.600rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding-top:1.400rem;padding-right:1.400rem;padding-bottom:1.400rem;padding-left:1.400rem;transform:translate(46.170rem,-9.800rem);}
+.tune-226{display:flex;flex-direction:row;align-items:center;column-gap:0.980rem;}
+.tune-227{width:1.875rem;}
+.tune-228{font-weight:700;letter-spacing:-0.019rem;}
+.tune-229{font-size:0.920rem;letter-spacing:-0.020rem;line-height:1.280rem;transform:translate(0.000rem,0.880rem);}
+.tune-230{display:flex;font-size:1.000rem;font-weight:400;width:19.616rem;height:9.586rem;padding-top:1.400rem;padding-right:1.400rem;padding-bottom:1.400rem;padding-left:1.400rem;border-radius:0.600rem;flex-direction:column;align-items:flex-start;justify-content:flex-start;line-height:1.500rem;text-align:left;transform:translate(29.740rem,-7.700rem);}
+.tune-231{display:flex;font-size:1.000rem;font-weight:400;width:79.116rem;flex-direction:row;align-items:center;column-gap:0.980rem;line-height:1.500rem;height:1.875rem;text-align:left;}
+.tune-232{font-size:1.000rem;font-weight:400;width:1.875rem;line-height:1.500rem;height:1.875rem;text-align:left;}
+.tune-233{font-size:1.000rem;line-height:1.500rem;letter-spacing:-0.019rem;font-weight:700;width:3.485rem;height:1.500rem;text-align:left;}
+.tune-234{font-size:0.920rem;line-height:1.300rem;letter-spacing:-0.020rem;font-weight:400;width:16.466rem;height:6.402rem;text-align:left;transform:translate(0.000rem,0.880rem);}
+.tune-235{transform:translate(51.630rem,-17.370rem); display:flex;font-size:1.000rem;font-weight:400;width:19.616rem;height:9.586rem;padding-top:1.400rem;padding-right:1.400rem;padding-bottom:1.400rem;padding-left:1.400rem;border-radius:0.600rem;flex-direction:column;align-items:flex-start;justify-content:flex-start;line-height:1.500rem;text-align:left;}
+.tune-236{display:flex;font-size:1.000rem;font-weight:400;width:79.116rem;flex-direction:row;align-items:center;column-gap:0.980rem;line-height:1.500rem;height:1.875rem;text-align:left;}
+.tune-237{font-size:1.000rem;font-weight:400;width:1.875rem;line-height:1.500rem;height:1.875rem;text-align:left;}
+.tune-238{font-size:1.000rem;line-height:1.500rem;letter-spacing:-0.019rem;font-weight:700;width:3.485rem;height:1.500rem;text-align:left;}
+.tune-239{font-size:0.920rem;line-height:1.300rem;letter-spacing:-0.020rem;font-weight:400;width:16.466rem;height:6.402rem;text-align:left;transform:translate(0.000rem,0.880rem);}
+.tune-240{display:flex;font-size:1.000rem;font-weight:400;width:19.616rem;height:12.286rem;padding-top:1.400rem;padding-right:1.400rem;padding-bottom:1.400rem;padding-left:1.400rem;border-radius:0.600rem;flex-direction:column;align-items:flex-start;justify-content:flex-start;line-height:1.500rem;text-align:left;transform:translate(18.820rem,-15.400rem);}
+.tune-241{display:flex;font-size:1.000rem;font-weight:400;width:79.116rem;flex-direction:row;align-items:center;column-gap:0.980rem;line-height:1.500rem;height:1.875rem;text-align:left;}
+.tune-242{font-size:1.000rem;font-weight:400;width:1.875rem;line-height:1.500rem;height:1.875rem;text-align:left;}
+.tune-243{font-size:1.000rem;line-height:1.500rem;letter-spacing:-0.019rem;font-weight:700;width:3.485rem;height:1.500rem;text-align:left;}
+.tune-244{font-size:0.920rem;line-height:1.280rem;letter-spacing:-0.020rem;font-weight:400;width:16.466rem;height:6.402rem;text-align:left;transform:translate(0.000rem,0.880rem);}
+.tune-245{display:flex;font-size:1.000rem;font-weight:400;width:19.616rem;height:12.286rem;padding-top:1.400rem;padding-right:1.400rem;padding-bottom:1.400rem;padding-left:1.400rem;border-radius:0.600rem;flex-direction:column;align-items:flex-start;justify-content:flex-start;line-height:1.500rem;text-align:left;transform:translate(40.560rem,-27.630rem);}
+.tune-246{display:flex;font-size:1.000rem;font-weight:400;width:79.116rem;flex-direction:row;align-items:center;column-gap:0.980rem;line-height:1.500rem;height:1.875rem;text-align:left;}
+.tune-247{font-size:1.000rem;font-weight:400;width:1.875rem;line-height:1.500rem;height:1.875rem;text-align:left;}
+.tune-248{font-size:1.000rem;line-height:1.500rem;letter-spacing:-0.019rem;font-weight:700;width:3.485rem;height:1.500rem;text-align:left;}
+.tune-249{font-size:0.920rem;line-height:1.280rem;letter-spacing:-0.020rem;font-weight:400;width:16.606rem;height:6.402rem;text-align:left;transform:translate(0.000rem,0.880rem);}
+.tune-253{width:6.02rem;letter-spacing:0.03rem;font-weight:700;font-size:0.92rem;line-height:1.09rem;transform:translate(0.00rem,0.00rem);}
+.tune-254{width:17.33rem;font-weight:400;font-size:0.82rem;letter-spacing:-0.03rem;line-height:1.37rem;transform:translate(0.00rem,0.00rem);}
+.tune-256{background-color: #335ff6; color:#fff; border-top-right-radius:3.50rem;border-bottom-right-radius:3.50rem;display:flex;flex-direction:row;margin-top:0.35rem;height:6.95rem;width:27.15rem;padding-top:1.58rem;padding-right:1.58rem;padding-bottom:1.58rem;padding-left:1.58rem;transform:translate(0.26rem,0.00rem);}
+.tune-258{font-weight:700;font-size:1.52rem;transform:translate(0.00rem,0.00rem);}
+.tune-274{background-color: #335ff6; color:#fff; margin-top:0.50rem;height:6.85rem;width:27.14rem;padding-top:1.40rem;padding-right:1.40rem;padding-bottom:1.40rem;padding-left:1.40rem;font-weight:700;display:flex;flex-direction:column;row-gap:1.01rem;border-top-right-radius:3.50rem;border-bottom-right-radius:3.50rem;transform:translate(0.26rem,0.00rem);}.tune-275{font-weight:700;font-size:1.46rem;letter-spacing:-0.03rem;transform:translate(0.00rem,0.23rem);transform:translate(0.00rem,-0.08rem);}
+.tune-276{ font-weight: 400; font-size:0.82rem;letter-spacing:-0.03rem;transform:translate(0.00rem,-0.51rem);}
+}
+
+  </style>
+</head>
+
+<body class="relative flex flex-col items-center justify-center min-h-screen">
+  
+  <header class="w-full flex items-center justify-center tune-2 relative">
+    <div class="absolute bg-[#eef9ff] -z-[100] tune-29"></div>
+    <img class="logo tune-170" src="assets/images/logo.svg" alt="BMI Calculator logo">
+
+    
+  </header>
+
+
+
+
+  <main class="">
+    <!-- Hero section -->
+    <section class="hero flex flex-col items-center justify-center tune-21">
+      <!-- Text area -->
+      <div class="flex flex-col items-center tune-151">
+        <h1 class="tune-277">
+          Body Mass Index Calculator</h1>
+        <p class="tune-152">
+          Better understand your weight in relation to your height using our
+          body mass index (BM) calculator. While BMI is not the sole
+          determinant of a healthy weight, it offers a valuable starting point
+          to evaluate your overall health and well-being.
+        </p>
+      </div>
+      <!-- BMI calculator -->
+      <form id="bmiCalculatorForm" class="bg-white shadow-lg tune-153">
+        <p class="tune-154">Enter your details below</p>
+        <!-- Radio buttons -->
+        <div class="radio-btns tune-185">
+          <div class="radio-container tune-186">
+            <input checked="true" class="radio tune-187" type="radio" name="measurement-system" id="metric">
+            <label class="label-radio tune-188" for="metric">Metric</label>
+          </div>
+          <div class="radio-container tune-189">
+            <input class="radio tune-190" type="radio" name="measurement-system" id="imperial">
+            <label class="label-radio tune-191" for="imperial">Imperial</label>
+          </div>
+        </div>
+        <!-- Metric input fields -->
+        <div class="input-fields metric tune-273">
+          <div class="fields-container relative tune-259">
+            <label class="label-options tune-260" for="cm">Height</label>
+            <input class="metric-input tune-261" type="number" name="height" min="0" id="cm" placeholder="0">
+            <p class="units absolute tune-262">cm</p>
+          </div>
+          <div class="fields-container relative tune-263">
+            <label class="label-options tune-264" for="kg">Weight</label>
+            <input class="metric-input tune-265" type="number" name="weight" min="0" id="kg" placeholder="0">
+            <p class="units absolute tune-266">kg</p>
+          </div>
+        </div>
+        <!-- Imperial input fields -->
+        <div class="input-fields imperial tune-192">
+          <div class="imperial-field">
+            <div class="fields-container tune-193">
+              <label class="label-options tune-194" for="height">Height</label>
+              <div class="imperial-input-container relative tune-195">
+                <input class="imperial-input tune-196" type="number" name="height-feet" min="0" id="feet" placeholder="0">
+                <p class="units-1 absolute tune-267">ft</p>
+                <input class="imperial-input tune-268" type="number" name="height-inches" min="0" max="11" id="inches" placeholder="0">
+                <p class="units absolute tune-269">in</p>
+              </div>
+            </div>
+          </div>
+          <div class="imperial-field">
+            <div class="fields-container tune-197">
+              <label class="label-options tune-198" for="weight">Weight</label>
+              <div class="imperial-input-container relative tune-199">
+                <input class="imperial-input tune-200" type="number" name="weight-stone" min="0" id="stone" placeholder="0">
+                <p class="units-1 absolute tune-270">st</p>
+                <input class="imperial-input tune-271" type="number" name="weight-lbs" min="0" max="13" id="lbs" placeholder="0">
+                <p class="units absolute tune-272">lbs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- BMI result area -->
+        <div class="output">
+          <div class="result-container ">
+             <div class="welcome-container tune-274">
+              <p class="welcome tune-275">Welcome!</p>
+              <p class="welcome-info tune-276">
+                Enter your height and weight and you’ll see your BMI result here
+              </p>
+            </div> 
+            <div class="output-info-container tune-256">
+              <div class="tune-257">
+                <p class="your-bmi tune-253">Your BMI is...</p>
+                <p class="score tune-258">1.0</p>
+              </div>
+              <p class="output-info tune-254">
+                Your BMI suggests you’re a
+                <span class="classification tune-4">Underweight</span>. Your ideal weight is
+                <span class="range">less than 53.5kgs</span>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+    <!-- Results info section -->
+    <section class="results tune-3">
+      <img class="curved-line tune-28" src="assets/images/pattern-curved-line-left.svg" alt="">
+      <div class="image-div">
+        <img src="assets/images/image-man-eating.webp" alt="A man smiling and eating with chopsticks" class="tune-201">
+      </div>
+      <div class="results-info tune-202">
+        <h2 class="tune-203">What your BMI result means</h2>
+        <p class="tune-204">
+          A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
+          Maintaining a healthy weight may lower your chances of experiencing
+          health issues later on, such as obesity and type 2 diabetes. Aim for
+          a nutritious diet with reduced fat and sugar content, incorporating
+          ample fruits and vegetables. Additionally, strive for regular
+          physical activity, ideally about 30 minutes daily for five days a
+          week.
+        </p>
+      </div>
+    </section>
+    <!-- Tips section -->
+    <section class="tips tune-205">
+      <div class="tips-container tune-206">
+        <img src="assets/images/icon-eating.svg" alt="" class="tune-207">
+        <div class="tips-text tune-208">
+          <h3 class="tune-209">Healthy eating</h3>
+          <p class="tune-210">
+            Healthy eating promotes weight control, disease prevention, better
+            digestion, immunity, mental clarity, and mood.
+          </p>
+        </div>
+      </div>
+      <div class="tips-container tune-211">
+        <img src="assets/images/icon-exercise.svg" alt="" class="tune-212">
+        <div class="tips-text tune-213">
+          <h3 class="tune-214">Regular exercise</h3>
+          <p class="tune-215">
+            Exercise improves fitness, aids weight control, elevates mood, and
+            reduces disease risk, fostering wellness and longevity.
+          </p>
+        </div>
+      </div>
+      <div class="tips-container tune-216">
+        <img src="assets/images/icon-sleep.svg" alt="" class="tune-217">
+        <div class="tips-text tune-218">
+          <h3 class="tune-219">Adequate sleep</h3>
+          <p class="tune-220">
+            Sleep enhances mental clarity, emotional stability, and physical
+            wellness, promoting overall restoration and rejuvenation.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Limitations section -->
+    <img class="curved-line-right" src="assets/images/pattern-curved-line-right.svg" alt="">
+    <section class="limitations tune-221">
+      <div class="limits-text limits tune-222">
+        <h2 class="tune-223">Limitations of BMI</h2>
+        <p class="tune-224">
+          Although BMI is often a practical indicator of healthy weight, it is
+          not suited for every person. Specific groups should carefully
+          consider their BMI outcomes, and in certain cases, the measurement
+          may not be beneficial to use.
+        </p>
+      </div>
+      <div class="limits-container limits gender tune-225">
+        <div class="img-limits tune-226">
+          <img src="assets/images/icon-gender.svg" alt="" class="tune-227">
+          <h3 class="limit-heading tune-228">Gender</h3>
+        </div>
+        <p class="tune-229">
+          The development and body fat composition of girls and boys vary with
+          age. Consequently, a child's age and gender are considered when
+          evaluating their BMI.
+        </p>
+      </div>
+      <div class="limits-container limits age tune-230 bg-white shadow-lg">
+        <div class="img-limits tune-231">
+          <img src="assets/images/icon-age.svg" alt="" class="tune-232">
+          <h3 class="limit-heading tune-233">Age</h3>
+        </div>
+        <p class="tune-234">
+          In aging individuals, increased body fat and muscle loss may cause
+          BMI to underestimate body fat content.
+        </p>
+      </div>
+      <div class="limits-container limits muscle tune-235 bg-white shadow-lg">
+        <div class="img-limits tune-236">
+          <img src="assets/images/icon-muscle.svg" alt="" class="tune-237">
+          <h3 class="limit-heading tune-238">Muscle</h3>
+        </div>
+        <p class="tune-239">
+          BMI may misclassify muscular individuals as overweight or obese, as
+          it doesn't differentiate muscle from fat.
+        </p>
+      </div>
+      <div class="limits-container limits pregnancy tune-240 bg-white shadow-lg">
+        <div class="img-limits tune-241">
+          <img src="assets/images/icon-pregnancy.svg" alt="" class="tune-242">
+          <h3 class="limit-heading tune-243">Pregnancy</h3>
+        </div>
+        <p class="tune-244">
+          Expectant mothers experience weight gain due to their growing baby.
+          Maintaining a healthy pre-pregnancy BMI is advisable to minimise
+          health risks for both mother and child.
+        </p>
+      </div>
+      <div class="limits-container limits race tune-245 bg-white shadow-lg">
+        <div class="img-limits tune-246">
+          <img src="assets/images/icon-race.svg" alt="" class="tune-247">
+          <h3 class="limit-heading tune-248">Race</h3>
+        </div>
+        <p class="tune-249">
+          Certain health concerns may affect individuals of some Black and
+          Asian origins at lower BMIs than others. To learn more, it is
+          advised to discuss this with your GP or practice nurse.
+        </p>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Run this command in terminal "npx tailwindcss -i ./projects/bmi-calculator/src/input.css -o ./projects/bmi-calculator/src/output.css --watch" to create output.css */
+
+/* Global outline for debugging */
+* {
+  /* outline: 1px solid red; */
+}
+
+html{
+    font-size: 1.25vw;
+}
+html,body{
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+}
+h1,h2,h3,p{
+    @apply w-fit;
+}
+
